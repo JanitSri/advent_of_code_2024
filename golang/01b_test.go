@@ -8,7 +8,7 @@ import (
 )
 
 func AOC01b() {
-	input := ReadFile("./inputs/01b.txt")
+	input := ReadFile("../inputs/01b.txt")
 	lines := strings.Split(input, "\n")
 
 	first := []int{}

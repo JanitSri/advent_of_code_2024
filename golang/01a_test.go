@@ -10,7 +10,7 @@ import (
 )
 
 func AOC01a() {
-	input := ReadFile("./inputs/01a.txt")
+	input := ReadFile("../inputs/01a.txt")
 	lines := strings.Split(input, "\n")
 
 	first := []int{}
