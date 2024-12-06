@@ -9,7 +9,7 @@ import (
 	"testing"
 )
 
-func AOC01a() {
+func aco01a() {
 	input := ReadFile("../inputs/01a.txt")
 	lines := strings.Split(input, "\n")
 
@@ -37,5 +37,5 @@ func AOC01a() {
 }
 
 func Test01a(t *testing.T) {
-	AOC01a()
+	aco01a()
 }
