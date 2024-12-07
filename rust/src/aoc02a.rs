@@ -4,7 +4,7 @@ use std::{
     str::FromStr,
 };
 
-pub fn aoc02a() -> i32 {
+fn aoc02a() -> i32 {
     let f = File::open("../inputs/02a.txt").expect("could not open file");
     let mut reader = BufReader::new(f);
     let mut buffer = String::new();
