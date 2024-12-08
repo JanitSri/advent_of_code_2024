@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 	"sort"
 	"strconv"
@@ -9,7 +8,7 @@ import (
 	"testing"
 )
 
-func aco01a() {
+func aco01a() int {
 	input := ReadFile("../inputs/01.txt")
 	lines := strings.Split(input, "\n")
 
@@ -33,9 +32,9 @@ func aco01a() {
 		total += int(math.Abs(float64(diff)))
 	}
 
-	fmt.Println("ANSWER:", total)
+	return total
 }
 
 func Test01a(t *testing.T) {
-	aco01a()
+	t.Log("ANSWER:", aco01a())
 }

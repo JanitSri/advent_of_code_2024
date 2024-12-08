@@ -1,14 +1,13 @@
 package main
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
 	"testing"
 )
 
-func aoc03a() {
+func aoc03a() int {
 	c := ReadFile("../inputs/03.txt")
 
 	r := regexp.MustCompile(`mul\(\d{1,3},\d{1,3}\)`)
@@ -19,7 +18,7 @@ func aoc03a() {
 		total += multiply(string(l))
 	}
 
-	fmt.Println(total)
+	return total
 }
 
 func multiply(input string) int {
@@ -31,5 +30,5 @@ func multiply(input string) int {
 }
 
 func Test03a(t *testing.T) {
-	aoc03a()
+	t.Log("ANSWER:", aoc03a())
 }

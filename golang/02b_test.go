@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"errors"
-	"fmt"
 	"io"
 	"log"
 	"math"
@@ -13,7 +12,7 @@ import (
 	"testing"
 )
 
-func aoc02b() {
+func aoc02b() int {
 	f, err := os.Open("../inputs/02.txt")
 	if err != nil {
 		log.Fatal("cannot open file:", err)
@@ -36,7 +35,7 @@ func aoc02b() {
 		}
 	}
 
-	fmt.Println("ANSWER", total)
+	return total
 }
 
 func safe2b(line string) bool {
@@ -77,5 +76,5 @@ func removedItem(items []string) bool {
 }
 
 func Test02b(t *testing.T) {
-	aoc02b()
+	t.Log("ANSWER:", aoc02b())
 }

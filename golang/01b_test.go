@@ -1,13 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 	"testing"
 )
 
-func aoc01b() {
+func aoc01b() int {
 	input := ReadFile("../inputs/01.txt")
 	lines := strings.Split(input, "\n")
 
@@ -38,9 +37,9 @@ func aoc01b() {
 		}
 	}
 
-	fmt.Println("ANSWER:", total)
+	return total
 }
 
 func Test01b(t *testing.T) {
-	aoc01b()
+	t.Log("ANSWER:", aoc01b())
 }

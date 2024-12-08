@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 	"testing"
 )
@@ -40,5 +39,5 @@ func traverse2(ri, ci int, r rune, arr [][]rune) bool {
 }
 
 func Test04b(t *testing.T) {
-	fmt.Println("ANSWER:", aoc04b())
+	t.Log("ANSWER:", aoc04b())
 }
