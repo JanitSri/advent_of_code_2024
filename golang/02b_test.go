@@ -14,7 +14,7 @@ import (
 )
 
 func aoc02b() {
-	f, err := os.Open("../inputs/02b.txt")
+	f, err := os.Open("../inputs/02a.txt")
 	if err != nil {
 		log.Fatal("cannot open file:", err)
 	}

@@ -9,7 +9,7 @@ import (
 )
 
 func aoc03b() {
-	content := ReadFile("../inputs/03b.txt")
+	content := ReadFile("../inputs/03a.txt")
 
 	r := regexp.MustCompile(`mul\(\d{1,3},\d{1,3}\)`)
 	matches := r.FindAllStringIndex(content, -1)
