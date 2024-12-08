@@ -11,7 +11,7 @@ var (
 )
 
 func aoc04a() int {
-	contents := strings.Split(ReadFile("../inputs/04a.txt"), "\n")
+	contents := strings.Split(ReadFile("../inputs/04.txt"), "\n")
 
 	ws := make([][]rune, len(contents))
 	for i, str := range contents {

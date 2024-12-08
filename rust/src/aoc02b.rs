@@ -5,7 +5,7 @@ use std::{
 };
 
 fn aoc02b() -> i32 {
-    let f = File::open("../inputs/02a.txt").expect("could not open file");
+    let f = File::open("../inputs/02.txt").expect("could not open file");
     let mut reader = BufReader::new(f);
     let mut buffer = String::new();
 

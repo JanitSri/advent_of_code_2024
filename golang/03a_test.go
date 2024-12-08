@@ -9,7 +9,7 @@ import (
 )
 
 func aoc03a() {
-	c := ReadFile("../inputs/03a.txt")
+	c := ReadFile("../inputs/03.txt")
 
 	r := regexp.MustCompile(`mul\(\d{1,3},\d{1,3}\)`)
 	ll := r.FindAll([]byte(c), -1)

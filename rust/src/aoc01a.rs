@@ -2,7 +2,7 @@ use crate::util::read_file;
 use std::str::FromStr;
 
 fn aoc01a() -> i32 {
-    let contents = read_file("../inputs/01a.txt");
+    let contents = read_file("../inputs/01.txt");
 
     let mut first: Vec<i32> = vec![];
     let mut second: Vec<i32> = vec![];

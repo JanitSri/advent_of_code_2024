@@ -3,7 +3,7 @@ use crate::util;
 const XMAS_ARRAY: [char; 4] = ['X', 'M', 'A', 'S'];
 
 fn aoc04b() -> i32 {
-    let contents = util::read_file("../inputs/04a.txt");
+    let contents = util::read_file("../inputs/04.txt");
 
     let ws: Vec<Vec<char>> = contents.split("\n").map(|f| f.chars().collect()).collect();
 

@@ -5,7 +5,7 @@ use regex::Regex;
 use crate::util;
 
 fn aoc03a() -> i32 {
-    let contents = util::read_file("../inputs/03a.txt");
+    let contents = util::read_file("../inputs/03.txt");
     let re = Regex::new(r"mul\(\d{1,3},\d{1,3}\)").unwrap();
 
     let mut total = 0;
