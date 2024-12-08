@@ -16,7 +16,7 @@ func aoc04b() int {
 
 	total := 0
 	for ri, r := range ws {
-		for ci, _ := range r {
+		for ci := range r {
 			if ws[ri][ci] == 'A' {
 				d1 := (traverse2(ri-1, ci-1, 'M', ws) && traverse2(ri+1, ci+1, 'S', ws)) || traverse2(ri-1, ci-1, 'S', ws) && traverse2(ri+1, ci+1, 'M', ws)
 				d2 := (traverse2(ri-1, ci+1, 'M', ws) && traverse2(ri+1, ci-1, 'S', ws)) || (traverse2(ri-1, ci+1, 'S', ws) && traverse2(ri+1, ci-1, 'M', ws))

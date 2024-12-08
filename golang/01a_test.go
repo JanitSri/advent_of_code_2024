@@ -28,7 +28,7 @@ func aco01a() {
 	sort.IntSlice(second).Sort()
 
 	total := 0
-	for i, _ := range first {
+	for i := range first {
 		diff := first[i] - second[i]
 		total += int(math.Abs(float64(diff)))
 	}

@@ -30,7 +30,7 @@ func aoc04a() int {
 		{-1, -1}, // Up-Left
 	}
 	for ri, r := range ws {
-		for ci, _ := range r {
+		for ci := range r {
 			for _, d := range directions {
 				if traverse(ri, ci, 0, ws, d) {
 					total++
