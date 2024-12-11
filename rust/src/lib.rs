@@ -8,4 +8,6 @@ mod aoc03a;
 mod aoc03b;
 mod aoc04a;
 mod aoc04b;
+mod aoc05a;
+mod aoc05b;
 mod util;
