@@ -70,6 +70,3 @@ func calculateB(pv, ci, v int) int {
 func Test07b(t *testing.T) {
 	t.Log("ANSWER", aoc07b())
 }
-
-// 9459986: 13 3 4 93 6 97 2 271 2 2
-// 828727414020
