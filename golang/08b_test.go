@@ -19,14 +19,14 @@ func aoc08b() int {
 	}
 
 	p := []Coord{}
-	for k, l := range m {
-		getAntiNodesB(l, &p, grid, r, c, k)
+	for _, l := range m {
+		getAntiNodesB(l, &p, r, c)
 	}
 
 	return len(p)
 }
 
-func getAntiNodesB(l []Coord, p *[]Coord, grid []string, r, c int, k rune) {
+func getAntiNodesB(l []Coord, p *[]Coord, r, c int) {
 	for _, l1 := range l {
 		for _, l2 := range l {
 			if l1 == l2 {

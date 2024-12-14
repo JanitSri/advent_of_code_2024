@@ -47,7 +47,7 @@ func aoc06b() int {
 	move2(sx, sy, grid, sd, seen)
 
 	total := 0
-	for k, _ := range seen {
+	for k := range seen {
 		seen2 := make(map[CoordAndDir]bool)
 		if obs(sx, sy, grid, sd, seen2, k) {
 			total++
