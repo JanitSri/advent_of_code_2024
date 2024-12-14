@@ -7,8 +7,6 @@ import (
 	"testing"
 )
 
-type Coord [2]int
-
 const (
 	up    = '^'
 	down  = 'v'

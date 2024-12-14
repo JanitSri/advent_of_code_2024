@@ -7,7 +7,6 @@ import (
 	"testing"
 )
 
-type Coord2 [2]int
 type CoordAndDir [3]int
 
 const (
@@ -17,7 +16,7 @@ const (
 	right2 = '>'
 )
 
-var offsets2 = map[rune]Coord2{
+var offsets2 = map[rune]Coord{
 	up2:    {-1, 0},
 	down2:  {1, 0},
 	left2:  {0, -1},
@@ -43,7 +42,7 @@ func aoc06b() int {
 		}
 	}
 
-	seen := make(map[Coord2]bool)
+	seen := make(map[Coord]bool)
 
 	move2(sx, sy, grid, sd, seen)
 
@@ -58,7 +57,7 @@ func aoc06b() int {
 	return total
 }
 
-func obs(sx, sy int, grid []string, sd rune, seen map[CoordAndDir]bool, obsCoord Coord2) bool {
+func obs(sx, sy int, grid []string, sd rune, seen map[CoordAndDir]bool, obsCoord Coord) bool {
 	if v, ok := seen[CoordAndDir{sx, sy, int(sd)}]; ok && v {
 		return true
 	}
@@ -83,7 +82,7 @@ func obs(sx, sy int, grid []string, sd rune, seen map[CoordAndDir]bool, obsCoord
 	return obs(sx+coord[0], sy+coord[1], grid, sd, seen, obsCoord)
 }
 
-func move2(sx, sy int, grid []string, sd rune, seen map[Coord2]bool) {
+func move2(sx, sy int, grid []string, sd rune, seen map[Coord]bool) {
 	coord := offsets2[sd]
 
 	if grid[sx][sy] == '#' {
@@ -98,11 +97,11 @@ func move2(sx, sy int, grid []string, sd rune, seen map[Coord2]bool) {
 	}
 
 	if sx == 0 || sx == len(grid)-1 || sy == 0 || sy == len(grid[0])-1 {
-		seen[Coord2{sx, sy}] = true
+		seen[Coord{sx, sy}] = true
 		return
 	}
 
-	seen[Coord2{sx, sy}] = true
+	seen[Coord{sx, sy}] = true
 	move2(sx+coord[0], sy+coord[1], grid, sd, seen)
 }
 
