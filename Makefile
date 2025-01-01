@@ -1,5 +1,5 @@
 run-go:
-	go test ./golang/util.go ./golang/$(arg)_test.go -v
+	go test ./golang/util.go ./golang/work_manager.go ./golang/$(arg)_test.go -v -timeout 0
 
 rust-fmt:
 	rustfmt ./rust/src/aoc$(arg).rs

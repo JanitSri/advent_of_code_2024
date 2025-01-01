@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -59,4 +60,24 @@ func Contains[T comparable](a []T, x T) bool {
 	}
 
 	return false
+}
+
+func CountDigits(i int) int {
+	var r int
+
+	for i > 0 {
+		i /= 10
+		r++
+	}
+
+	return r
+}
+
+func SplitDigitsInHalf(i int) []int {
+	s := strconv.Itoa(i)
+	n := CountDigits(i) / 2
+	l, _ := strconv.Atoi(s[:n])
+	r, _ := strconv.Atoi(s[n:])
+
+	return []int{l, r}
 }
