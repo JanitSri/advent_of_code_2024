@@ -21,20 +21,37 @@ func aoc11b() int {
 		nums = append(nums, n)
 	}
 
+	var r int
+	iterCnt := 75
+	m := make(map[[2]int]int)
+	for _, n := range nums {
+		r += stoneCalc(n, iterCnt, m)
+	}
+
 	return r
 }
 
-func stoneOperationB(st *stoneTaskB) []*stoneTaskB {
-	i := st.iter + 1
-	n := st.num
-	if n == 0 {
-		return []*stoneTaskB{{iter: i, num: 1}}
-	} else if CountDigits(n)%2 == 0 {
-		r := SplitDigitsInHalf(n)
-		return []*stoneTaskB{{iter: i, num: r[0]}, {iter: i, num: r[1]}}
+func stoneCalc(n, iterCnt int, m map[[2]int]int) int {
+	if iterCnt == 0 {
+		return 1
 	}
 
-	return []*stoneTaskB{{iter: i, num: n * 2024}}
+	if _, ok := m[[2]int{n, iterCnt}]; !ok {
+		var r int
+
+		if n == 0 {
+			r = stoneCalc(1, iterCnt-1, m)
+		} else if CountDigits(n)%2 == 0 {
+			n := SplitDigitsInHalf(n)
+			r = stoneCalc(n[0], iterCnt-1, m) + stoneCalc(n[1], iterCnt-1, m)
+		} else {
+			r = stoneCalc(n*2024, iterCnt-1, m)
+		}
+
+		m[[2]int{n, iterCnt}] = r
+	}
+
+	return m[[2]int{n, iterCnt}]
 }
 
 func Test11b(t *testing.T) {
